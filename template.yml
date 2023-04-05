@@ -1,0 +1,31 @@
+
+functions:
+- getUser(userId)
+- createUser(user)
+- updateUser(userId)
+- deleteUser(userId)
+
+routes:
+- GET: getUser
+- POST: createUser
+- UPDATE: updateUser
+- DELETE: deleteUser
+
+models:
+    user:
+        userId: UUID
+        name: string
+        email: string
+        dateOfBirth: string
+        last_logged_in: TIMESTAMP
+        created_at: TIMESTAMP
+        updated_at: TIMESTAMP
+
+database:
+    dynamodb:
+        tableName: usersTable
+
+iac:
+- serverless framework version 3
+- aws
+- us-east-1
